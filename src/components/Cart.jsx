@@ -32,13 +32,12 @@ function Cart({ cart, setCart }) {
 
   const getTotal = () => {
     return cart.reduce((total, item) => {
-      const price = parseFloat(item.price.replace('$', ''));
-      return total + price * item.quantity;
-    }, 0);
+      return total + Number(item.price) * item.quantity;
+    }, 0).toFixed(2);
   };
 
   return (
-    <div className="mt-10 p-4 border rounded shadow-md max-w-xl mx-auto bg-white">
+    <div className=" p-4 border rounded-md bg-white">
       <h2 className="text-xl font-bold mb-4">🛒 Your Cart</h2>
       
       {cart.length === 0 ? (
@@ -46,17 +45,17 @@ function Cart({ cart, setCart }) {
       ) : (
         <>
           {cart.map(item => (
-            <div key={item.id} className="flex justify-between items-center border-b py-3">
+            <div key={item.id} className="">
               <div>
                 <h3 className="font-semibold">{item.name}</h3>
-                <p>Price: {item.price}</p>
+                <p>Price: ${Number(item.price).toFixed(2)}</p>
                 <p>Quantity: {item.quantity}</p>
-                <p>Total: ${parseFloat(item.price.replace('$', '')) * item.quantity}</p>
+                <p>Total: ${(Number(item.price) * item.quantity).toFixed(2)}</p>
               </div>
               <div className="space-x-2">
                 <button onClick={() => increase(item.id)} className="bg-green-500 text-white px-3 rounded">+</button>
                 <button onClick={() => decrease(item.id)} className="bg-yellow-500 text-white px-3 rounded">-</button>
-                <button onClick={() => remove(item.id)} className="bg-red-500 text-white px-3 rounded">❌</button>
+                <button onClick={() => remove(item.id)} className="bg-black px-3 rounded">❌</button>
               </div>
             </div>
           ))}
@@ -64,14 +63,14 @@ function Cart({ cart, setCart }) {
           <div className="mt-4 text-right">
             <p className="font-bold">Total: ${getTotal()}</p>
             <div className="mt-2 space-x-3">
-              <button onClick={confirmOrder} className="bg-blue-600 text-white px-4 py-2 rounded">Confirm Order</button>
-              <button onClick={startNewOrder} className="bg-gray-400 text-white px-4 py-2 rounded">Start New Order</button>
+              <button onClick={confirmOrder} className="bg-blue-500 text-white px-4 py-2 rounded">Confirm Order</button>
+              <button onClick={startNewOrder} className="bg-gray-500 text-white px-4 py-2 rounded">Start New Order</button>
             </div>
           </div>
         </>
       )}
 
-      {/* Modal */}
+      
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-10">
           <div className="bg-white p-6 rounded shadow-lg text-center">
