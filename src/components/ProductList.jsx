@@ -61,31 +61,36 @@ function ProductList() {
 
   return (
     <>
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-10 p-5'>
-        <div className='grid grid-cols-3 sm:grid-cols-1 gap-10 bg-white border rounded-md p-5'>
+      <div className='grid grid-cols-1 lg:grid-cols-3  md:grid-cols-2 gap-10 p-5 border-8 border-black rounded-lg'>
+        <div className='grid col-span-2 sm:w-full lg:grid-cols-3 md:grid-cols-2 md:w-full gap-10 bg-white border rounded-md p-5'>
           {products.map((product) => (
-            <div key={product.id} className="product-card mt-3 bg-white border rounded-md p-5">
+            <div key={product.id} className="product-card bg-white border rounded-md p-5">
               <img
                 src={product.image}
                 alt={product.name}
-                className="product-image size-48 rounded-md shadow-md shadow-black hover:border-2 hover:border-orange-600"
+                className="product-image rounded-md shadow-md shadow-black hover:border-2 hover:border-orange-600"
               />
               <figcaption>
                 <h2 className='font-bold text-lg'>{product.name}</h2>
                 <p className='text-orange-700 font-semibold'>${product.price}</p>
+
                 <button
-                  onClick={() => addToCart(product)}
-                  className="rounded-full w-32 p-2 border-2-black"
-                >
-                  Add to Cart
+                onClick={() => {
+                  addToCart(product);
+                  console.log(`${product.name} added to cart!`);
+               }}
+                className=" text-black w-32 p-2 border-1 border-black rounded-full hover:bg-orange-700">
+                Add to Cart
                 </button>
+
               </figcaption>
             </div>
           ))}
         </div>
 
-        {/* 🛒 Cart Component */}
-        <Cart cart={cart} setCart={setCart} />
+        <div className="col-span-1">
+          <Cart cart={cart} setCart={setCart} />
+        </div>
       </div>
     </>
   );

@@ -5,10 +5,12 @@ function App() {
   
   return (
     <>
-      4
+
+        <h1 className="text-4xl text-white font-bold p-3">Product List</h1>
+
       <div >
       <ProductList/>
-      <p className="footer mt-4 flex text-center">© 2025 My E-commerce Store</p>
+      <p className="footer mt-4 flex text-center text-white">© 2025 E-commerce Store</p>
       </div>
     </>
   )

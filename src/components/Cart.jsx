@@ -37,25 +37,26 @@ function Cart({ cart, setCart }) {
   };
 
   return (
-    <div className=" p-4 border rounded-md bg-white">
-      <h2 className="text-xl font-bold mb-4">🛒 Your Cart</h2>
+    <div className="p-4 border rounded-md bg-white">
+      <h2 className="text-xl font-bold mb-4 text-orange-700">🛒 Your Cart</h2>
       
       {cart.length === 0 ? (
         <p className="text-gray-500">Your cart is empty.</p>
       ) : (
         <>
           {cart.map(item => (
-            <div key={item.id} className="">
-              <div>
+            <div key={item.id} className="p-5 grid grid-cols-3 ">
+              <div className='col-span-2'>
+                <img src={item.image} alt={item.name} className="w-10 h-10 rounded" />
                 <h3 className="font-semibold">{item.name}</h3>
                 <p>Price: ${Number(item.price).toFixed(2)}</p>
                 <p>Quantity: {item.quantity}</p>
                 <p>Total: ${(Number(item.price) * item.quantity).toFixed(2)}</p>
               </div>
-              <div className="space-x-2">
-                <button onClick={() => increase(item.id)} className="bg-green-500 text-white px-3 rounded">+</button>
-                <button onClick={() => decrease(item.id)} className="bg-yellow-500 text-white px-3 rounded">-</button>
-                <button onClick={() => remove(item.id)} className="bg-black px-3 rounded">❌</button>
+              <div className="space-x-3 col-span-1 flex items-center justify-end">
+                <button onClick={() => increase(item.id)} className="bg-green-600 text-white px-3 rounded">+</button>
+                <button onClick={() => decrease(item.id)} className="bg-yellow-600 text-white px-3 rounded">-</button>
+                <button onClick={() => remove(item.id)} className=" px-3 rounded">❌</button>
               </div>
             </div>
           ))}
@@ -63,8 +64,8 @@ function Cart({ cart, setCart }) {
           <div className="mt-4 text-right">
             <p className="font-bold">Total: ${getTotal()}</p>
             <div className="mt-2 space-x-3">
-              <button onClick={confirmOrder} className="bg-blue-500 text-white px-4 py-2 rounded">Confirm Order</button>
-              <button onClick={startNewOrder} className="bg-gray-500 text-white px-4 py-2 rounded">Start New Order</button>
+              <button onClick={confirmOrder} className="bg-orange-700 text-white px-4 py-2 rounded-full">Confirm Order</button>
+              <button onClick={startNewOrder} className="bg-gray-500 text-white px-4 py-2 rounded-full">Start New Order</button>
             </div>
           </div>
         </>
