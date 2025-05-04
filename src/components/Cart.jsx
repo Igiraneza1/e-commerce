@@ -47,7 +47,6 @@ function Cart({ cart, setCart }) {
           {cart.map(item => (
             <div key={item.id} className="p-5 grid grid-cols-3 ">
               <div className='col-span-2'>
-                <img src={item.image} alt={item.name} className="w-10 h-10 rounded" />
                 <h3 className="font-semibold">{item.name}</h3>
                 <p>Price: ${Number(item.price).toFixed(2)}</p>
                 <p>Quantity: {item.quantity}</p>

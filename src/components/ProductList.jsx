@@ -9,12 +9,31 @@ function ProductList() {
     const storedCart = localStorage.getItem('cart');
     return storedCart ? JSON.parse(storedCart) : [];
   });
+  const[products, setProducts] = useState(productsData);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch('/data/data.json');
+        if (!response.ok) {
+          throw new Error(`error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        setProducts(data);
+      } catch (error) {
+        console.error('Error loading products:', error);
+      }
+    };
+
+    fetchProducts();
+  }, []);
 
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
 
-  const[products] = useState(productsData);
+  
 
   const addToCart = (product) => {
     const exists = cart.find(item => item.id === product.id);
@@ -62,6 +81,8 @@ function ProductList() {
           <Cart cart={cart} setCart={setCart} />
         </div>
       </div>
+      )}
+      
     </>
   );
 }
