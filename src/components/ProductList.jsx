@@ -14,7 +14,6 @@ function ProductList() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        setLoading(true);
         const response = await fetch('/data/data.json');
         if (!response.ok) {
           throw new Error(`error! status: ${response.status}`);
@@ -28,6 +27,7 @@ function ProductList() {
 
     fetchProducts();
   }, []);
+  
 
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cart));
@@ -55,7 +55,7 @@ function ProductList() {
           {products.map((product) => (
             <div key={product.id} className="product-card bg-white border rounded-md p-5">
               <img
-                src={product.image}
+                src={product.image.desktop}
                 alt={product.name}
                 className="product-image rounded-md shadow-md shadow-black hover:border-2 hover:border-orange-600 "
               />
@@ -81,7 +81,6 @@ function ProductList() {
           <Cart cart={cart} setCart={setCart} />
         </div>
       </div>
-      )}
       
     </>
   );
