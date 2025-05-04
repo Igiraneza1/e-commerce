@@ -4,7 +4,7 @@ import Cart from './Cart';
 import belt from '../components/images/belt.jpg';
 import gloves from '../components/images/gloves.jpg';
 import hat from '../components/images/hat.jpg';
-import headset from '../components/images/headset.jpg';
+import dress from '../components/images/dress.jpg';
 import jacket from '../components/images/jacket.jpg';
 import jeans from '../components/images/jeans.webp';
 import pajamas from '../components/images/pajamas.jpg';
@@ -13,9 +13,10 @@ import short from '../components/images/short.jpg';
 import sneakers from '../components/images/sneakers.jpg';
 import swimsuit from '../components/images/swimsuit.jpg';
 import sweater from '../components/images/sweater.jpg';
-import socks from '../components/images/socks.jpg';
-import tshirt from '../components/images/tshirt.webp';
-import watch from '../components/images/watch.jpg';
+import shirt from '../components/images/shirt.jpg';
+import tshirt from '../components/images/tshirt.jpg';
+import sandal from '../components/images/sandal.jpg';
+
 
 function ProductList() {
 
@@ -29,21 +30,22 @@ function ProductList() {
   }, [cart]);
 
   const [products] = useState([
-    { id: 1, name: "T-shirt", price: 15, image: tshirt },
+   
+    { id: 1, name: "Hat", price: 10, image: hat },
     { id: 2, name: "Jeans", price: 35, image: jeans },
     { id: 3, name: "Sneakers", price: 75, image: sneakers },
-    { id: 4, name: "Hat", price: 10, image: hat },
-    { id: 5, name: "Socks", price: 10, image: socks },
+    { id: 1, name: "Scarf", price: 10, image: scarf },
+    { id: 5,name: "Belt", price: 5, image: belt },
     { id: 6, name: "Jacket", price: 40, image: jacket },
     { id: 7, name: "Shorts", price: 14, image: short },
-    { id: 8, name: "Belt", price: 5, image: belt },
-    { id: 9, name: "Scarf", price: 10, image: scarf },
+    { id: 8, name: "Sandal", price: 30, image: sandal },
+    { id: 9, name: "Shirt", price: 5, image: shirt },
     { id: 10, name: "Gloves", price: 20, image: gloves },
     { id: 11, name: "Sweater", price: 30, image: sweater },
     { id: 12, name: "Pajamas", price: 20, image: pajamas },
     { id: 13, name: "Swimsuit", price: 40, image: swimsuit },
-    { id: 14, name: "Watch", price: 30, image: watch },
-    { id: 15, name: "Headset", price: 10, image: headset },
+    { id: 14, name: "T-shirt", price: 15, image: tshirt },
+    { id: 15, name: "Dress", price: 10, image: dress },
   ]);
 
   const addToCart = (product) => {
