@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { TiShoppingCart } from "react-icons/ti";
+import Modal from './Modal';
 
 function Cart({ cart, setCart }) {
   const [showModal, setShowModal] = useState(false);
@@ -31,22 +33,25 @@ function Cart({ cart, setCart }) {
   };
 
   const getTotal = () => {
-    return cart.reduce((total, item) => {
-      return total + Number(item.price) * item.quantity;
-    }, 0).toFixed(2);
+    return cart.reduce((total, item) =>
+      total + Number(item.price) * item.quantity, 0
+    ).toFixed(2);
   };
 
   return (
     <div className="p-4 border rounded-md bg-white">
-      <h2 className="text-xl font-bold mb-4 text-orange-700">🛒 Your Cart</h2>
+      <div className="flex items-center gap-2">
+      <TiShoppingCart className='size-10' /><h2 className=" flex text-xl font-bold text-orange-700">  Your Cart</h2>
+      </div>
       
+
       {cart.length === 0 ? (
         <p className="text-gray-500">Your cart is empty.</p>
       ) : (
         <>
           {cart.map(item => (
-            <div key={item.id} className="p-5 grid grid-cols-3 ">
-              <div className='col-span-2'>
+            <div key={item.id} className="p-5 grid grid-cols-3">
+              <div className="col-span-2">
                 <h3 className="font-semibold">{item.name}</h3>
                 <p>Price: ${Number(item.price).toFixed(2)}</p>
                 <p>Quantity: {item.quantity}</p>
@@ -55,7 +60,7 @@ function Cart({ cart, setCart }) {
               <div className="space-x-3 col-span-1 flex items-center justify-end">
                 <button onClick={() => increase(item.id)} className="bg-green-600 text-white px-3 rounded">+</button>
                 <button onClick={() => decrease(item.id)} className="bg-yellow-600 text-white px-3 rounded">-</button>
-                <button onClick={() => remove(item.id)} className=" px-3 rounded">❌</button>
+                <button onClick={() => remove(item.id)} className="px-3 rounded">❌</button>
               </div>
             </div>
           ))}
@@ -70,17 +75,12 @@ function Cart({ cart, setCart }) {
         </>
       )}
 
-      
       {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-10">
-          <div className="bg-white p-6 rounded shadow-lg text-center">
-            <h2 className="text-lg font-bold mb-4">✅ Order Confirmed!</h2>
-            <p className="mb-4">Thank you for your purchase.</p>
-            <button onClick={startNewOrder} className="bg-green-600 text-white px-4 py-2 rounded">
-              Start New Order
-            </button>
-          </div>
-        </div>
+        <Modal
+          cart={cart}
+          total={getTotal()}
+          onClose={startNewOrder}
+        />
       )}
     </div>
   );

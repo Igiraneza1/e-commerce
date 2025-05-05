@@ -62,16 +62,14 @@ function ProductList() {
               <figcaption>
                 <h2 className='font-bold text-lg'>{product.name}</h2>
                 <p className='text-orange-700 font-semibold'>${product.price}</p>
-
-                <button
+                <button 
                 onClick={() => {
                   addToCart(product);
                   console.log(`${product.name} added to cart!`);
                }}
-                className=" text-black w-32 p-2 border-1 border-black rounded-full hover:bg-orange-700 focus:ring-4 focus:ring-orange-500">
-                Add to Cart
+                className=" text-black w-full border-1 border-black rounded-full hover:bg-orange-700 focus:ring-4 focus:ring-orange-500">
+                  🛒 Add to Cart
                 </button>
-
               </figcaption>
             </div>
           ))}
