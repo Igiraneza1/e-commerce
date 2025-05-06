@@ -1,17 +1,19 @@
 [
+    
     {
-       "id": 1,
-       "image": {
-            
-            "thumbnail": "/images/image-waffle-thumbnail.jpg",
-            "mobile": "/images/image-waffle-mobile.jpg",
-            "tablet": "/images/image-waffle-tablet.jpg",
-            "desktop": "/images/image-waffle-desktop.jpg"
-       },
-       "name": "Waffle with Berries",
-       "category": "Waffle",
-       "price": 6.50
-    },
+        "id": 1,
+        "image": {
+             
+             "thumbnail": "/images/image-waffle-thumbnail.jpg",
+             "mobile": "/images/image-waffle-mobile.jpg",
+             "tablet": "/images/image-waffle-tablet.jpg",
+             "desktop": "/images/image-waffle-desktop.jpg"
+        },
+        "name": "Waffle with Berries",
+        "category": "Waffle",
+        "price": 6.50
+     },
+    
     {
         "id": 2,
         "image": {
@@ -37,7 +39,7 @@
         "price": 8.00
      },
      {
-        "id": 5,
+        "id": 4,
         "image": {
             "thumbnail": "/images/image-tiramisu-thumbnail.jpg",
             "mobile": "/images/image-tiramisu-mobile.jpg",
@@ -49,7 +51,7 @@
         "price": 5.50
      },
      {
-        "id": 6,
+        "id": 5,
         "image": {
             "thumbnail": "/images/image-baklava-thumbnail.jpg",
             "mobile": "/images/image-baklava-mobile.jpg",
@@ -60,6 +62,20 @@
         "category": "Baklava",
         "price": 4.00
      },
+
+     {
+        "id": 6,
+        "image": {
+            "thumbnail": "/images/image-cake-thumbnail.jpg",
+            "mobile": "/images/image-cake-mobile.jpg",
+            "tablet": "/images/image-cake-tablet.jpg",
+            "desktop": "/images/image-cake-desktop.jpg"
+        },
+        "name": "Red Velvet Cake",
+        "category": "Cake",
+        "price": 4.50
+     },
+
      {
         "id": 7,
         "image": {
@@ -72,18 +88,20 @@
         "category": "Pie",
         "price": 5.00
      },
+
      {
         "id": 8,
         "image": {
-            "thumbnail": "/images/image-cake-thumbnail.jpg",
-            "mobile": "/images/image-cake-mobile.jpg",
-            "tablet": "/images/image-cake-tablet.jpg",
-            "desktop": "/images/image-cake-desktop.jpg"
+            "thumbnail": "/images/image-panna-cotta-thumbnail.jpg",
+            "mobile": "/images/image-panna-cotta-mobile.jpg",
+            "tablet": "/images/image-panna-cotta-tablet.jpg",
+            "desktop": "/images/image-panna-cotta-desktop.jpg"
         },
-        "name": "Red Velvet Cake",
-        "category": "Cake",
-        "price": 4.50
+        "name": "Vanilla Panna Cotta",
+        "category": "Panna Cotta",
+        "price": 6.50
      },
+
      {
         "id": 9,
         "image": {
@@ -95,17 +113,8 @@
         "name": "Salted Caramel Brownie",
         "category": "Brownie",
         "price": 4.50
-     },
-     {
-        "id": 10,
-        "image": {
-            "thumbnail": "/images/image-panna-cotta-thumbnail.jpg",
-            "mobile": "/images/image-panna-cotta-mobile.jpg",
-            "tablet": "/images/image-panna-cotta-tablet.jpg",
-            "desktop": "/images/image-panna-cotta-desktop.jpg"
-        },
-        "name": "Vanilla Panna Cotta",
-        "category": "Panna Cotta",
-        "price": 6.50
      }
+
+     
+
 ]
