@@ -7,4 +7,7 @@ body{
   justify-content: center;
   bottom: 0%;
 }
-
+.product-image{
+  width: 600px;
+  height: 200px;
+}

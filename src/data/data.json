@@ -1,17 +1,15 @@
 [
-    
     {
         "id": 1,
         "image": {
-             
-             "thumbnail": "/images/image-waffle-thumbnail.jpg",
-             "mobile": "/images/image-waffle-mobile.jpg",
-             "tablet": "/images/image-waffle-tablet.jpg",
-             "desktop": "/images/image-waffle-desktop.jpg"
+            "thumbnail": "/images/image-brownie-thumbnail.jpg",
+            "mobile": "/images/image-brownie-mobile.jpg",
+            "tablet": "/images/image-brownie-tablet.jpg",
+            "desktop": "/images/image-brownie-desktop.jpg"
         },
-        "name": "Waffle with Berries",
-        "category": "Waffle",
-        "price": 6.50
+        "name": "Salted Caramel Brownie",
+        "category": "Brownie",
+        "price": 4.50
      },
     
     {
@@ -102,17 +100,19 @@
         "price": 6.50
      },
 
+
      {
         "id": 9,
         "image": {
-            "thumbnail": "/images/image-brownie-thumbnail.jpg",
-            "mobile": "/images/image-brownie-mobile.jpg",
-            "tablet": "/images/image-brownie-tablet.jpg",
-            "desktop": "/images/image-brownie-desktop.jpg"
+             
+             "thumbnail": "/images/image-waffle-thumbnail.jpg",
+             "mobile": "/images/image-waffle-mobile.jpg",
+             "tablet": "/images/image-waffle-tablet.jpg",
+             "desktop": "/images/image-waffle-desktop.jpg"
         },
-        "name": "Salted Caramel Brownie",
-        "category": "Brownie",
-        "price": 4.50
+        "name": "Waffle with Berries",
+        "category": "Waffle",
+        "price": 6.50
      }
 
      

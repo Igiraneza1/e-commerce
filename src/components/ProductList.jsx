@@ -50,10 +50,10 @@ function ProductList() {
 
   return (
     <>
-      <div className='grid grid-cols-1 lg:grid-cols-3  md:grid-cols-2 gap-10 p-5 border-8 border-black rounded-lg'>
-        <div className='grid col-span-2 sm:w-full lg:grid-cols-3 md:grid-cols-2 md:w-full gap-10 bg-white border rounded-md p-5'>
+      <div className='grid grid-cols-1 lg:grid-cols-4  md:grid-cols-2 border-8 border-black rounded-lg'>
+        <div className='grid col-span-3 sm:w-full lg:grid-cols-3 md:grid-cols-2 md:w-full gap-10 bg-white border rounded-md p-5'>
           {products.map((product) => (
-            <div key={product.id} className="product-card bg-white border rounded-md p-5">
+            <div key={product.id} className="product-card bg-white border rounded-md">
               <img
                 src={product.image.desktop}
                 alt={product.name}
@@ -67,7 +67,7 @@ function ProductList() {
                   addToCart(product);
                   console.log(`${product.name} added to cart!`);
                }}
-                className=" text-black w-full border-1 border-black rounded-full hover:bg-orange-700 focus:ring-4 focus:ring-orange-500">
+                className=" text-black w-full border-1 border-black rounded-full hover:bg-orange-600 focus:ring-4 focus:ring-orange-500">
                   🛒 Add to Cart
                 </button>
               </figcaption>

@@ -68,7 +68,7 @@ function Cart({ cart, setCart }) {
           <div className="mt-4 text-right">
             <p className="font-bold">Total: ${getTotal()}</p>
             <div className="mt-2 space-x-3">
-              <button onClick={confirmOrder} className="bg-orange-700 text-white px-4 py-2 rounded-full">Confirm Order</button>
+              <button onClick={confirmOrder} className="bg-orange-600 text-white px-6 mb-2 py-2 rounded-full">Confirm Order</button>
               <button onClick={startNewOrder} className="bg-gray-500 text-white px-4 py-2 rounded-full">Start New Order</button>
             </div>
           </div>
